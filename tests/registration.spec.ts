@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
+import { loginData } from '../test_data/user.data';
 
-test('test', async ({ page }) => {
+test('Registration happy', async ({ page }) => {
 
   //Arrange
   await page.goto('https://practicesoftwaretesting.com/auth/register');
@@ -14,8 +15,8 @@ test('test', async ({ page }) => {
   await page.locator('[data-test="state"]').fill('Teststate');
   await page.locator('[data-test="country"]').selectOption('AL');
   await page.locator('[data-test="phone"]').fill('555666777');
-  await page.locator('[data-test="email"]').fill('testmail@gmail.com');
-  await page.locator('[data-test="password"]').fill('TestTest123!!');
+  await page.locator('[data-test="email"]').fill(loginData.userLogin)
+  await page.locator('[data-test="password"]').fill(loginData.userPassword);
   await page.locator('[data-test="register-submit"]').click();
 
   //Assert 
