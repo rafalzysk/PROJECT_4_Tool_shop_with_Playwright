@@ -22,7 +22,6 @@ export class ProductPage {
         this.addToCartButton = this.page.locator('[data-test="add-to-cart"]')
         this.imageElement = this.page.locator('div').filter({ hasText: 'Photo by Helinton Fantin on' }).nth(2);
         this.productNameElement = this.page.locator('[data-test="product-name"]');
-        this.productNameElement = this.page.locator('[data-test="product-description"]');
         this.productDescriptionElement = this.page.locator('[data-test="product-description"]')
         this.addToFavouritesButton = this.page.locator('[data-test="add-to-favorites"]');
         this.productAddedMessage = this.page.getByLabel('Product added to shopping');
