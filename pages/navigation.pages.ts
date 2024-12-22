@@ -14,6 +14,7 @@ export class Navigation {
     languageButton: Locator;
     cartButton: Locator;
     cartButtonCounter: Locator;
+    categoriesRentalButton: Locator;
 
 
     constructor(private page: Page) {
@@ -24,6 +25,7 @@ export class Navigation {
         this.categoriesPowerToolsButton = this.page.locator('[data-test="nav-power-tools"]');
         this.categoriesOtherButton = this.page.locator('[data-test="nav-other"]');
         this.categoriesSpecialToolButton = this.page.locator('[data-test="nav-special-tools"]');
+        this.categoriesRentalButton = this.page.locator('[data-test="nav-rentals"]');
         this.contactButton = this.page.locator('[data-test="nav-contact"]');
         this.signInButton = this.page.locator('[data-test="nav-sign-in"]');
         this.languageButton = this.page.locator('[data-test="language"]');

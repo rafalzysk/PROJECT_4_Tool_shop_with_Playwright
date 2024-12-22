@@ -1,12 +1,14 @@
 import { test, expect } from '@playwright/test';
 import { ProductPage } from '../pages/product.pages';
 import { CheckoutPage } from '../pages/checkout.pages';
+import { Navigation } from '../pages/navigation.pages';
 
 
 test('test', async ({ page }) => {
 
     const productPage = new ProductPage(page);
     const checkoutPage = new CheckoutPage(page);
+    const navigation = new Navigation(page);
     const epmtyCartTotalValue = "$0.00";
 
     await page.goto('/');
@@ -17,8 +19,8 @@ test('test', async ({ page }) => {
     await productPage.addToCartButton.click();
 
     ///--CHECKOUT PART--///     
-    await page.locator('[data-test="nav-cart"]').click();
-    await page.locator('[class="btn btn-danger"]').click();
+    await navigation.cartButton.click();
+    await checkoutPage.deleteProductButton.click();
     await page.waitForTimeout(1000);
 
     const cartTotalPriceValue = await checkoutPage.cartTotalPrice.textContent()

@@ -3,23 +3,25 @@ import { LoginPage } from '../pages/login.pages';
 import { userData } from '../test_data/user.data';
 import { ProductPage } from '../pages/product.pages';
 import { CheckoutPage } from '../pages/checkout.pages';
-import exp from 'constants';
+import { Navigation } from '../pages/navigation.pages';
 
 test('test', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
     const productPage = new ProductPage(page);
     const checkoutPage = new CheckoutPage(page);
+    const navigation = new Navigation(page);
     const userAlreadyLoggedMessageText = `Hello ${userData.userName} ${userData.userLastName}, you are already logged in. You can proceed to checkout.`
     const paymentMethodBankTransfer = 'bank-transfer';
+    const productAmountValue = "2";
 
     await page.goto('/');
-    await page.locator('[data-test="nav-sign-in"]').click();
+    await navigation.signInButton.click();
     await loginPage.loginInput.fill(userData.userLogin);
     await loginPage.passwordInput.fill(userData.userPassword);
     await loginPage.loginButton.click();
     await page.waitForTimeout(500);
-    await page.getByRole('link', { name: 'Practice Software Testing -' }).click();
+    await navigation.homeButton.click();
 
     /// --PRODUCT PART --///
     await productPage.productElement.click()
@@ -29,14 +31,14 @@ test('test', async ({ page }) => {
     const productQuantityValue = await productPage.quantityCounter.textContent();
     const productPriceValue = await productPage.priceElement.textContent();
 
-    await expect(productPage.quantityCounter).toHaveValue('2');
-    await expect(page.locator('[data-test="cart-quantity"]')).toHaveText('2');
+    await expect(productPage.quantityCounter).toHaveValue(productAmountValue);
+    await expect(navigation.cartButtonCounter).toHaveText(productAmountValue);
     await expect(productPage.productAddedMessage).toBeVisible();
 
     /// --CHECKOUT PART --///
 
     //CHECKOUT step 1//
-    await page.locator('[data-test="nav-cart"]').click();
+    await navigation.cartButton.click();
 
     const cartProductQuantityValue = await checkoutPage.cartProductQuantity.textContent();
     const cartProductPriceValue = await checkoutPage.cartProductPrice.textContent();

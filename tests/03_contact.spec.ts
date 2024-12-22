@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { userData } from '../test_data/user.data';
 import { ContactPage } from '../pages/contact.pages';
+import { Navigation } from '../pages/navigation.pages';
 
 test('test', async ({ page }) => {
     //Arrange
@@ -8,10 +9,11 @@ test('test', async ({ page }) => {
     const successText = "Thanks for your message! We will contact you shortly."
     const subjectOption = 'return';
     const contactPage = new ContactPage(page);
+    const navigation = new Navigation(page);
 
     //Act
-    await page.goto('https://practicesoftwaretesting.com/');
-    await page.locator('[data-test="nav-contact"]').click();
+    await page.goto('/');
+    await navigation.contactButton.click();
     await contactPage.NameInput.fill(userData.userName);
     await contactPage.LastNameInput.fill(userData.userLastName);
     await contactPage.EmailInput.fill(userData.userLogin);
