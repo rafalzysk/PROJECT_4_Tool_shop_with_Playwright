@@ -4,13 +4,12 @@ import { LoginPage } from '../pages/login.pages';
 
 test.describe('User login', () => {
     test.beforeEach(async ({ page }) => {
-        const loginUrl = 'https://practicesoftwaretesting.com/auth/login';
-        await page.goto(loginUrl);
+        await page.goto('/auth/login');
     });
 
     test('Login with correct credentials', async ({ page }) => {
         //Arrange
-        const accountURL = 'https://practicesoftwaretesting.com/account';
+        const accountURL = '/account';
         const loginPage = new LoginPage(page);
 
         //Act

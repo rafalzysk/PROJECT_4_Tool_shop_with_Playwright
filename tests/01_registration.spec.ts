@@ -4,8 +4,8 @@ import { RegisterPage } from '../pages/register.pages';
 
 test('Registration happy path', async ({ page }) => {
     //Arrange
-    const registerURL = 'https://practicesoftwaretesting.com/auth/register';
-    const loginURL = 'https://practicesoftwaretesting.com/auth/login';
+    const registerURL = '/auth/register';
+    const loginURL = '/auth/login';
     const registerPage = new RegisterPage(page);
 
     //Act

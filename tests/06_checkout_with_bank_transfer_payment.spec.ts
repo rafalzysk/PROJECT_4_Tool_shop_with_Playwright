@@ -13,7 +13,7 @@ test('test', async ({ page }) => {
     const userAlreadyLoggedMessageText = `Hello ${userData.userName} ${userData.userLastName}, you are already logged in. You can proceed to checkout.`
     const paymentMethodBankTransfer = 'bank-transfer';
 
-    await page.goto('https://practicesoftwaretesting.com/');
+    await page.goto('/');
     await page.locator('[data-test="nav-sign-in"]').click();
     await loginPage.loginInput.fill(userData.userLogin);
     await loginPage.passwordInput.fill(userData.userPassword);

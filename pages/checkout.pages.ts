@@ -18,6 +18,7 @@ export class CheckoutPage {
     paymentConfirmButton: Locator;
     successPaymentMessage: Locator;
     orderConfirmation: Locator;
+
     constructor(private page: Page) {
 
         this.cartProductPrice = this.page.locator('[data-test="product-price"]');
@@ -37,5 +38,5 @@ export class CheckoutPage {
         this.paymentConfirmButton = this.page.locator('[data-test="finish"]');
         this.successPaymentMessage = this.page.getByText('Payment was successful');
         this.orderConfirmation = this.page.locator("#order-confirmation");
-    }
-}
+    };
+};
