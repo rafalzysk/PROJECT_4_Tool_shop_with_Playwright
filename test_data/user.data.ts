@@ -11,6 +11,10 @@ export const userData = {
     userLogin: 'testmail73@gmail.com',
     userPassword: 'TestTest123!!',
 
+    userBank: 'TestBank',
+    userBankAccountName: '555565423123123',
+    userBankAccountNumber: '555565423123123',
+
     incorrectUserLogin: 'test@mail.com',
     incorrectUserPassword: 'test',
 
