@@ -36,3 +36,34 @@ export class Navigation {
 
     }
 }
+
+
+export class Search {
+    searchInput: Locator;
+    searchSubmit: Locator;
+    expectedProducts: Locator;
+    searchTerm: Locator;
+    notAvaialbleProductsMessage: Locator;
+    filterProductCHeckbox: Locator;
+
+
+    constructor(private page: Page) {
+        this.searchInput = this.page.locator('[data-test="search-query"]')
+        this.searchSubmit = this.page.locator('[data-test="search-submit"]')
+        this.expectedProducts = this.page.locator('[class="card-body"]')
+        this.searchTerm = this.page.locator('[data-test="search-term"]')
+        this.notAvaialbleProductsMessage = this.page.locator('[data-test="no-results"]')
+
+    }
+}
+
+export class Filter {
+    filterProductCheckbox: Locator;
+    expectedProduct: Locator;
+
+
+    constructor(private page: Page) {
+        this.filterProductCheckbox = this.page.getByRole('checkbox', { name: " Drill " })
+        this.expectedProduct = this.page.locator('[class="card-body"]')
+    }
+}

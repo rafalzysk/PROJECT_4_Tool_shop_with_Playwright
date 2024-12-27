@@ -3,7 +3,7 @@ import { userData } from '../test_data/user.data';
 import { ContactPage } from '../pages/contact.pages';
 import { Navigation } from '../pages/navigation.pages';
 
-test('test', async ({ page }) => {
+test('Contact form', async ({ page }) => {
     //Arrange
     const attachmentPath = './test_data/test.txt';
     const successText = "Thanks for your message! We will contact you shortly."

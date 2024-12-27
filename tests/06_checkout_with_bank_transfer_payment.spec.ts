@@ -5,7 +5,7 @@ import { ProductPage } from '../pages/product.pages';
 import { CheckoutPage } from '../pages/checkout.pages';
 import { Navigation } from '../pages/navigation.pages';
 
-test('test', async ({ page }) => {
+test('Checkout with transfer payment', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
     const productPage = new ProductPage(page);

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { Navigation } from '../pages/navigation.pages';
+import { Navigation } from '../pages/home.pages';
 
 test.describe('Navigation buttons verification', () => {
     test.beforeEach(async ({ page }) => {

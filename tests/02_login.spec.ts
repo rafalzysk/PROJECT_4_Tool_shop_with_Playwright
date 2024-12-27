@@ -19,6 +19,7 @@ test.describe('User login', () => {
 
         //Assert 
         await expect(page).toHaveURL(accountURL);
+
     });
 
     test('Login with incorrect credentials', async ({ page }) => {

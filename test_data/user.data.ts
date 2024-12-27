@@ -8,7 +8,7 @@ export const userData = {
     userPost: '99-999',
     userPhone: '555666777',
     userBornDate: '1992-12-12',
-    userLogin: 'testmai323@gmail.com',
+    userLogin: 'testmai623@gmail.com',
     userPassword: 'TestTest123!!',
 
     userBank: 'TestBank',

@@ -4,7 +4,7 @@ import { CheckoutPage } from '../pages/checkout.pages';
 import { Navigation } from '../pages/navigation.pages';
 
 
-test('test', async ({ page }) => {
+test('Remove product from cart', async ({ page }) => {
 
     const productPage = new ProductPage(page);
     const checkoutPage = new CheckoutPage(page);
