@@ -3,7 +3,8 @@ import { LoginPage } from '../pages/login.pages';
 import { userData } from '../test_data/user.data';
 import { ProductPage } from '../pages/product.pages';
 import { CheckoutPage } from '../pages/checkout.pages';
-import { Navigation } from '../pages/navigation.pages';
+import { Navigation } from '../pages/home.pages';
+import { RegisterPage } from '../pages/register.pages';
 
 test('Checkout with transfer payment', async ({ page }) => {
 
@@ -11,15 +12,25 @@ test('Checkout with transfer payment', async ({ page }) => {
     const productPage = new ProductPage(page);
     const checkoutPage = new CheckoutPage(page);
     const navigation = new Navigation(page);
+    const register = new RegisterPage(page);
     const userAlreadyLoggedMessageText = `Hello ${userData.userName} ${userData.userLastName}, you are already logged in. You can proceed to checkout.`
     const paymentMethodBankTransfer = 'bank-transfer';
     const productAmountValue = "2";
 
-    await page.goto('/');
-    await navigation.signInButton.click();
+    const registerURL = '/auth/register';
+    const registerPage = new RegisterPage(page);
+
+    //Act
+    await page.goto(registerURL);
+    await registerPage.regsiter_new_user();
+
+    await page.waitForTimeout(1000);
+
     await loginPage.loginInput.fill(userData.userLogin);
     await loginPage.passwordInput.fill(userData.userPassword);
     await loginPage.loginButton.click();
+
+
     await page.waitForTimeout(500);
     await navigation.homeButton.click();
 

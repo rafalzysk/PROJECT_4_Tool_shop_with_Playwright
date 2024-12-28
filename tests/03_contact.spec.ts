@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { userData } from '../test_data/user.data';
 import { ContactPage } from '../pages/contact.pages';
-import { Navigation } from '../pages/navigation.pages';
+import { Navigation } from '../pages/home.pages';
 
 test('Contact form', async ({ page }) => {
     //Arrange

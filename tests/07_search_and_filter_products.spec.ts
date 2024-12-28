@@ -49,7 +49,7 @@ test.describe('Search component', () => {
         const products = await response.json();
 
         const apiProductCount = products.data.length;
-        const productElements = page.locator(".col-md-9").getByRole("link");
+        const productElements = search.allExpectedProducts;
         await expect(productElements).toHaveCount(apiProductCount);
     });
 

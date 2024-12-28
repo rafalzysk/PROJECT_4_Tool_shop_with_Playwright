@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { ProductPage } from '../pages/product.pages';
 import { CheckoutPage } from '../pages/checkout.pages';
-import { Navigation } from '../pages/navigation.pages';
+import { Navigation } from '../pages/home.pages';
 
 
 test('Remove product from cart', async ({ page }) => {

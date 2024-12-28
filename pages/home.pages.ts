@@ -16,6 +16,7 @@ export class Navigation {
     cartButtonCounter: Locator;
     categoriesRentalButton: Locator;
     userNavMenu: Locator;
+    signOutButton: Locator;
 
 
     constructor(private page: Page) {
@@ -32,7 +33,8 @@ export class Navigation {
         this.languageButton = this.page.locator('[data-test="language"]');
         this.cartButton = this.page.locator('[data-test="nav-cart"]');
         this.cartButtonCounter = this.page.locator('[data-test="cart-quantity"]');
-        this.userNavMenu = page.locator('[data-test="nav-menu"]');
+        this.userNavMenu = this.page.locator('[data-test="nav-menu"]');
+        this.signOutButton = this.page.locator('[data-test="nav-sign-out"]');
 
     }
 }
@@ -45,6 +47,7 @@ export class Search {
     searchTerm: Locator;
     notAvaialbleProductsMessage: Locator;
     filterProductCHeckbox: Locator;
+    allExpectedProducts: Locator;
 
 
     constructor(private page: Page) {
@@ -53,6 +56,7 @@ export class Search {
         this.expectedProducts = this.page.locator('[class="card-body"]')
         this.searchTerm = this.page.locator('[data-test="search-term"]')
         this.notAvaialbleProductsMessage = this.page.locator('[data-test="no-results"]')
+        this.allExpectedProducts = page.locator(".col-md-9").getByRole("link")
 
     }
 }
