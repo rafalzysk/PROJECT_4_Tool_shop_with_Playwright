@@ -1,5 +1,5 @@
 
-**Playwright with Typescript - ToolShop**
+# **Playwright with Typescript - ToolShop**
 
 
 The aim of the project was to practice and shwocase automatic testing skills using the Playwright tool. 
