@@ -6,7 +6,7 @@ The aim of the project was to practice and shwocase automatic testing skills usi
 
 The test object is the  [ToolShop]([https://restful-booker.herokuapp.com/](https://practicesoftwaretesting.com/)  webiste.
 
-The project was created in such a way to check as many possibilities as possible of the Playwright tool like:
+The project was created in such a way to check as many funcionality as possible of the Playwright tool like:
 
 - interaction with web elements and UI components
 - aplication of Page Object Model
