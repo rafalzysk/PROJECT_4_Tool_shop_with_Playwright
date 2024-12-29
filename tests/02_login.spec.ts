@@ -6,6 +6,7 @@ import { Navigation } from '../pages/home.pages';
 test.describe('User login', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('/auth/login');
+
     });
 
     test('Login with correct credentials', async ({ page }) => {
@@ -64,5 +65,11 @@ test.describe('User login', () => {
 
         await expect(page).toHaveURL(loginURL);
         await expect(navigation.signInButton).toBeVisible();
+    });
+
+
+    test('Login form visual test', async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await expect(loginPage.loginForm).toHaveScreenshot();
     });
 });

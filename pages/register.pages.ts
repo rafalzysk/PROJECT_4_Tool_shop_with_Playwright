@@ -15,6 +15,7 @@ export class RegisterPage {
     userPasswordInput: Locator;
     registerSubmitButton: Locator;
     registerErrorMessage: Locator;
+    registrationForm: Locator;
 
 
     constructor(private page: Page) {
@@ -31,8 +32,7 @@ export class RegisterPage {
         this.userPasswordInput = this.page.locator('[data-test="password"]');
         this.registerSubmitButton = this.page.locator('[data-test="register-submit"]');
         this.registerErrorMessage = this.page.locator('[class="help-block"]');
-
-
+        this.registrationForm = this.page.locator('[class="col-lg-8 auth-form"]')
     }
 
     async regsiter_new_user() {

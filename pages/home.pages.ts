@@ -17,6 +17,7 @@ export class Navigation {
     categoriesRentalButton: Locator;
     userNavMenu: Locator;
     signOutButton: Locator;
+    navBar: Locator;
 
 
     constructor(private page: Page) {
@@ -35,6 +36,7 @@ export class Navigation {
         this.cartButtonCounter = this.page.locator('[data-test="cart-quantity"]');
         this.userNavMenu = this.page.locator('[data-test="nav-menu"]');
         this.signOutButton = this.page.locator('[data-test="nav-sign-out"]');
+        this.navBar = this.page.locator('[class="navbar navbar-expand-lg navbar-light bg-light"]');
 
     }
 }

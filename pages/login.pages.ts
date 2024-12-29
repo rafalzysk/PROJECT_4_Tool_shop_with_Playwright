@@ -8,6 +8,7 @@ export class LoginPage {
     errorData: Locator;
     errorLogin: Locator;
     errorPassword: Locator;
+    loginForm: Locator;
 
     constructor(private page: Page) {
         this.loginInput = this.page.locator('[data-test="email"]');
@@ -16,6 +17,7 @@ export class LoginPage {
         this.errorData = this.page.locator('[data-test="login-error"]');
         this.errorLogin = this.page.locator('[data-test="email-error"]');
         this.errorPassword = page.locator('[data-test="password-error"]');
+        this.loginForm = this.page.locator('[class="col-lg-6 auth-form"]');
 
     }
 

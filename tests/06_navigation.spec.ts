@@ -70,4 +70,13 @@ test.describe('Navigation buttons verification', () => {
         await expect(page).toHaveURL('/rentals');
     });
 
+
+});
+
+test('Navbar visual test', async ({ page }) => {
+    await page.goto('/');
+    const navigation = new Navigation(page);
+
+    await expect(navigation.navBar).toHaveScreenshot();
+
 });
