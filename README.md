@@ -4,7 +4,7 @@
 
 The aim of the project was to practice and shwocase automatic testing skills using the Playwright tool. 
 
-The test object is the  [ToolShop](https://practicesoftwaretesting.com/)](https://practicesoftwaretesting.com/)  webiste.
+The test object is the  [ToolShop](https://practicesoftwaretesting.com/) webiste.
 
 The project was created in such a way to check as many funcionality as possible of the Playwright tool like:
 
