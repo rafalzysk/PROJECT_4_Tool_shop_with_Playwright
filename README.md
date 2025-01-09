@@ -24,7 +24,7 @@ The project was created in such a way to check as many funcionality as possible 
 **How to run project**: 
 
  Clone repository :
- ``` git clone https://github.com/sehsune/Playwright_tool_shop.git```
+ ``` git clone https://github.com/rafalzysk/Playwright_tool_shop.git```
  - project initiation `npm init`  
  - install Playwright `npm init playwright@latest`
    (optionaly install plug-in `Playwright Test for VSCode`
